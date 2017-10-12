@@ -1,0 +1,9 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.lenovo.todoupdated.MainActivity">
+    <item android:id="@+id/call" android:title="CALL"></item>
+    <item android:id="@+id/aboutus" android:title="ABOUT US"></item>
+    <item android:id="@+id/feedback" android:title="FEEDBACK"></item>
+
+</menu>
