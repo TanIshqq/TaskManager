@@ -5,41 +5,43 @@
     android:padding="16dp"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/add_event"
-        android:hint="Event"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/add_venue"
-        android:hint="Venue"
-        android:textStyle="bold"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="20dp">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <EditText
+                android:id="@+id/add_event"
+                android:hint="Event"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/add_venue"
+                android:hint="Venue"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
             <TimePicker
                 android:id="@+id/time_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"/>
+                android:layout_marginTop="20dp"
+                android:padding="30dp"/>
 
             <DatePicker
                 android:id="@+id/date_picker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"/>
+                android:layout_marginTop="20dp"
+                android:padding="30dp"/>
 
             <Button
                 android:id="@+id/add_save"

@@ -22,10 +22,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".add_activity"/>
-        <activity android:name=".edit_activity"/>
+        <activity android:name=".add_activity" />
+        <activity android:name=".edit_activity" />
 
-        <receiver android:name=".AlarmReciever" android:process=":remote" />
+        <receiver
+            android:name=".AlarmReciever"
+            android:enabled="true"
+            android:exported="true"/>
 
     </application>
 

@@ -23,6 +23,10 @@
     <Button
         android:id="@+id/edit_save"
         android:text="Save"
+        android:layout_margin="30dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:background="@android:color/transparent"
         android:onClick="Edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

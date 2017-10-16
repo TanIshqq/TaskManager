@@ -21,19 +21,19 @@ import static com.example.lenovo.todoupdated.Constants.key_task;
 
 public class add_activity extends AppCompatActivity {
     public static final int ADD_SUCCESS = 1;
-    final static int RQS_1 = 1;
     DatePicker pickerDate;
     TimePicker pickerTime;
     Tasks task;
     EditText add_event;
     EditText add_venue;
+    int Id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_activity);
         Intent i = getIntent();
-        task =(Tasks) i.getSerializableExtra(key_task);
+//        task =(Tasks) i.getSerializableExtra(key_task);
         pickerDate = (DatePicker)findViewById(R.id.date_picker);
         pickerTime = (TimePicker)findViewById(R.id.time_picker);
         add_event = (EditText)findViewById(R.id.add_event);
@@ -62,7 +62,8 @@ public class add_activity extends AppCompatActivity {
         contentValues.put(Contract.task_event,eventText);
         contentValues.put(Contract.task_venue,venueText);
         long id = db.insert(Contract.task_tablename,null,contentValues);
-
+        Id = (int)id;
+        task = new Tasks(eventText , venueText , Id);
         Calendar current = Calendar.getInstance();
 
         Calendar cal = Calendar.getInstance();
@@ -92,13 +93,9 @@ public class add_activity extends AppCompatActivity {
 
     private void setAlarm(Calendar targetCal){
 
-//        info.setText("\n\n***\n"
-//                + "Alarm is set@ " + targetCal.getTime() + "\n"
-//                + "***\n");
-
         Intent intent = new Intent(getBaseContext(), AlarmReciever.class);
         intent.putExtra(Constants.key_task,task);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), RQS_1, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(getBaseContext(), Id, intent, 0);
         AlarmManager alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         alarmManager.set(AlarmManager.RTC_WAKEUP, targetCal.getTimeInMillis(), pendingIntent);
     }

@@ -7,7 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.support.v7.app.NotificationCompat;
+import android.util.Log;
 import android.widget.Toast;
+
+import static com.example.lenovo.todoupdated.Constants.key_task;
 
 /**
  * Created by Lenovo on 12-10-2017.
@@ -17,10 +20,13 @@ public class AlarmReciever extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context arg0, Intent arg1) {
-        Toast.makeText(arg0, "Alarm Received!", Toast.LENGTH_LONG).show();
+        Toast.makeText(arg0,"Alarm Recieved" , Toast.LENGTH_LONG).show();
         NotificationCompat.Builder builder=new NotificationCompat.Builder(arg0);
-        String Title= arg1.getStringExtra(Constants.key_task);
-        builder.setContentTitle(Title);
+        Tasks task =(Tasks) arg1.getSerializableExtra(Constants.key_task);
+//        String Title= task.getEvent();
+//        String Text = task.getVenue();
+        builder.setContentTitle("Check Task List");
+//        builder.setContentText(Text);
         builder.setAutoCancel(true);
         builder.setSmallIcon(R.drawable.icon);
         builder.setVibrate(new long[]{1000, 1000});
@@ -31,3 +37,10 @@ public class AlarmReciever extends BroadcastReceiver {
 
     }
 }
+
+
+//        String Title= arg1.getStringExtra(Constants.key_task);
+//        builder.setContentTitle(Title);
+
+
+
