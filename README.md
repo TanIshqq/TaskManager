@@ -8,3 +8,5 @@ To Do App Demo:
 4.Alarms enabled
 5.Call/Feedback/About Us
 6. Editable tasks
+
+![Demo](/ToDoAppDemo.gif?raw=true "Demo")
