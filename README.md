@@ -3,12 +3,12 @@
 
 **To Do App Demo:**
 
-- 1. All data stored in database
-- 2. Animations for up and down movement
-- 3. Swipe to delete
-- 4. Alarms enabled
-- 5. Call/Feedback/About Us
-- 6. Editable tasks 
+- All data stored in database
+- Animations for up and down movement
+- Swipe to delete
+- Alarms enabled
+- Call/Feedback/About Us
+- Editable tasks 
 
 ## Demo for App:
 ![Demo](/ToDoAppDemo.gif?raw=true "Demo")
